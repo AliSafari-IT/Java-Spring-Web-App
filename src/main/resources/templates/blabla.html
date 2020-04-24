@@ -1,0 +1,29 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" media="all" href="/css/style.css"/>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css"/>
+    <title>Blabla</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+</head>
+<body class="m-4">
+<h1 class="display-4 text-center mx-2 my-lg-5 p-3 bg-danger">It's Blabla Blabla Time!!!</h1>
+<h2 th:text="${appName}">app</h2>
+<hr class="bg-primary">
+<div class="nav"><h1 th:text="${appName}"> app</h1></div>
+
+<div class="row1">
+    <div class="row1content"><p th:text="${message}">yeahyyeahyeaheah</p></div>
+    <div class="buttons"><a class="buttonLook largeButton" href="/">home</a></div>
+</div>
+<hr>
+<p>
+    <a href="/">Back to Homepage</a>
+</p>
+<script src="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/fontawesome.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" media="all" href="/css/style.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css"/>
+    <title>Party Homepage</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <title>Venue</title>
+</head>
+<body class="m-4">
+<h1 class="display-4 text-center mx-2 my-lg-5 p-3 bg-danger">Party Venue Name</h1>
+<div class="nav"><h1 th:text="${appName}"> app</h1></div>
+
+<div class="row1">
+    <div class="row1content">
+        <div th:if="${venue}">
+            <h2 th:text="${venue.venueName}">venue</h2>
+            <div class="venueinfo">
+                <div class="infoLine">
+                    <div class="infoLineName">max number of people:</div>
+                    <div class="infoLineValue"
+                         th:text="${venue.infoAvailableMaxNumberOfPersons} ? ${venue.maxNumberOfPersons}: 'unknown'">77
+                    </div>
+                </div>
+                <div class="infoLine">
+                    <div class="infoLineName">are own drinks allowed:</div>
+                    <div class="infoLineValue" th:text="${venue.areOwnDrinksAllowed}">yes</div>
+                </div>
+                <div class="infoLine">
+                    <div class="infoLineName">is food possible:</div>
+                    <div class="infoLineValue" th:text="${venue.isFoodPossible()}">yes</div>
+                </div>
+                <div class="infoLine">
+                    <div class="infoLineName">more info:</div>
+                    <div class="infoLineValue"><a th:text="${venue.linkMoreInfo}"
+                                                  th:href="${venue.linkMoreInfo}"
+                                                  class="linkLook"
+                                                  target="_blank">more_info_link</a></div>
+                </div>
+            </div>
+            <div>
+                <div class="prevButtonDiv">
+                    <a th:href="'/venue/'+${idOfPrevVenue}"
+                       href="venue.html"
+                       class="buttonLook smallButton">&lt;</a>
+                </div>
+                <div class="nextButtonDiv">
+                    <a th:href="'/venue/'+${idOfNextVenue}"
+                       href="venue.html"
+                       class="buttonLook smallButton">&gt;</a>
+                </div>
+            </div>
+        </div>
+        <div th:unless="${venue}">no venue was chosen.</div>
+        <div class="buttons"><a class="buttonLook largeButton" href="/">home</a></div>
+    </div>
+</div>
+
+
+<div class="row1">
+    <div class="row1content">
+        <div>
+            <h2 th:text="${message}">yeahyyeahyeaheah</h2>
+            <ul>
+                <li th:each="venue:${venues}">
+                    <a th:text="${venue.venueName }"
+                       th:href="'venue/'+${venue.id}"
+                       href="venue.html"
+                       class="buttonLook mediumButton">the venue name</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="buttons"><a class="buttonLook largeButton" href="blabla">blabla</a></div>
+</div>
+<div class="row2">
+    <h1>come party with us</h1>
+    <hr>
+    <hr>
+    <hr>
+</div>
+<div class="row3">
+    <h3>Contact us:</h3>
+    <p>my name</p>
+    <p>my address</p>
+    <p>2800 Mechelen</p>
+    <p>0476/123123</p>
+</div>
+<div class="bottom">
+    <p>copyright ThomasMore</p>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/fontawesome.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
